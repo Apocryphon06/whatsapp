@@ -108,7 +108,7 @@ const ItemWrapper = styled.div`
 `;
 
 const LastActivity = styled.div`
-  color: #d8d8d8;
+  color: #adbac1;
   font-size: 12px;
 `;
 
@@ -128,14 +128,13 @@ const Scrollable = styled.div`
 
 function ChatListing() {
   const [person, setPerson] = useState({});
+  const [isActive, setIsActive] = useState(false);
+  
   return (
     <Area>
       <ChatListingWrapper>
         <Nav>
-          <UserIcon
-            src={`https://picsum.photos/200?random=99`}
-            alt="user"
-          />
+          <UserIcon src={`https://picsum.photos/200?random=99`} alt="user" />
           <NavActions>
             <GroupsIcon
               sx={{ color: "#adbac1", cursor: "pointer", marginRight: 3 }}
@@ -177,6 +176,7 @@ function ChatListing() {
           {fields.map((item) => (
             <ItemWrapper
               onClick={() => {
+                setIsActive(true)
                 setPerson({
                   name: item.name,
                   activity: item.activity,
@@ -201,6 +201,7 @@ function ChatListing() {
         </Scrollable>
       </ChatListingWrapper>
       <ChatView
+        isActive={isActive}
         name={person.name}
         activity={person.activity}
         url={person.url}

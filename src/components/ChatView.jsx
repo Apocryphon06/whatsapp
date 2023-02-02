@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import styled from "styled-components";
 import SearchIcon from "@mui/icons-material/Search";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
@@ -6,6 +6,7 @@ import ChatArea from "./ChatArea";
 import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
 import MicIcon from "@mui/icons-material/Mic";
+import SendIcon from "@mui/icons-material/Send";
 
 const ChatViewWrapper = styled.div`
   display: flex;
@@ -107,6 +108,12 @@ const SubText = styled.div`
 `;
 
 function ChatView({ isActive, name, activity, url }) {
+  const [send, setSend] = useState(false);
+
+  const handleSend = (e) => {
+    if (e.target.value === "") setSend(false);
+    else setSend(true);
+  };
   return (
     <Fragment>
       {isActive ? (
@@ -121,9 +128,9 @@ function ChatView({ isActive, name, activity, url }) {
             </User>
             <NavActions>
               <SearchIcon
-                sx={{ color: "#adbac1", cursor: "pointer", marginRight: 5 }}
+                sx={{ color: "#adbac1", cursor: "pointer", marginRight: 3 }}
               />
-              <MoreVertIcon sx={{ color: "#adbac1", cursor: "pointer" }} />
+              <MoreVertIcon sx={{ color: "#adbac1", cursor: "pointer",marginRight: 3 }} />
             </NavActions>
           </Nav>
           <ChatArea />
@@ -137,9 +144,13 @@ function ChatView({ isActive, name, activity, url }) {
               }}
             />
             <InputContainer>
-              <Input placeholder=" Type a message " />
+              <Input placeholder=" Type a message " onChange={handleSend} />
             </InputContainer>
-            <MicIcon sx={{ color: "#8696a0", cursor: "pointer" }} />
+            {!send ? (
+              <MicIcon sx={{ color: "#8696a0", cursor: "pointer" }} />
+            ) : (
+              <SendIcon sx={{ color: "#8696a0", cursor: "pointer" }} />
+            )}
           </InputWrapper>
         </ChatViewWrapper>
       ) : (

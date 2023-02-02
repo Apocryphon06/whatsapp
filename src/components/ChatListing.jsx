@@ -129,7 +129,7 @@ const Scrollable = styled.div`
 function ChatListing() {
   const [person, setPerson] = useState({});
   const [isActive, setIsActive] = useState(false);
-  
+
   return (
     <Area>
       <ChatListingWrapper>
@@ -137,15 +137,40 @@ function ChatListing() {
           <UserIcon src={`https://picsum.photos/200?random=99`} alt="user" />
           <NavActions>
             <GroupsIcon
-              sx={{ color: "#adbac1", cursor: "pointer", marginRight: 3 }}
+              sx={{
+                color: "#adbac1",
+                width: "20px",
+                height: "20px",
+                cursor: "pointer",
+                marginRight: 3,
+              }}
             />
             <RadioButtonUncheckedIcon
-              sx={{ color: "#adbac1", cursor: "pointer", marginRight: 3 }}
+              sx={{
+                color: "#adbac1",
+                width: "20px",
+                height: "20px",
+                cursor: "pointer",
+                marginRight: 3,
+              }}
             />
             <ChatIcon
-              sx={{ color: "#adbac1", cursor: "pointer", marginRight: 3 }}
+              sx={{
+                color: "#adbac1",
+                width: "20px",
+                height: "20px",
+                cursor: "pointer",
+                marginRight: 3,
+              }}
             />
-            <MoreVertIcon sx={{ color: "#adbac1", cursor: "pointer" }} />
+            <MoreVertIcon
+              sx={{
+                color: "#adbac1",
+                width: "20px",
+                height: "20px",
+                cursor: "pointer",
+              }}
+            />
           </NavActions>
         </Nav>
         <SearchWrapper>
@@ -176,7 +201,7 @@ function ChatListing() {
           {fields.map((item) => (
             <ItemWrapper
               onClick={() => {
-                setIsActive(true)
+                setIsActive(true);
                 setPerson({
                   name: item.name,
                   activity: item.activity,

@@ -15,7 +15,7 @@ export default function SideDrawer({ state, toggleDrawer, name }) {
           open={state['left']}
           onClose={toggleDrawer('left', false)}
         >
-          <Box sx={{ width: 450 }} role="presentation">
+          <Box sx={{ width: 450,borderRight:'0.5px solid #2e3b44' }} role="presentation">
             {name === 'Profile' && <Profile toggleDrawer={toggleDrawer} />}
             {name === 'Communities' && (
               <Communities toggleDrawer={toggleDrawer} />

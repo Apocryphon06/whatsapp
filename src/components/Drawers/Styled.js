@@ -25,6 +25,7 @@ export const Title = styled.div`
   font-size: 18px;
   color: #fcfcfc;
   font-weight: 600;
+  font-family: Helvetica, arial, sans-serif;
   padding: 20px;
 `
 
@@ -66,12 +67,14 @@ export const Editable = styled.div`
 export const Info = styled.div`
   color: #adbac1;
   line-height: 1.5em;
+  font-family: Helvetica, arial, sans-serif;
 `
 
 export const SubHeading = styled.div`
   font-size: 20px;
   color: #fcfcfc;
   font-weight: 600;
+  font-family: Helvetica, arial, sans-serif;
 `
 
 export const CustomButton = styled.button`

@@ -9,12 +9,13 @@ import styled from 'styled-components'
 // mui imports
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
-import ChatIcon from '@mui/icons-material/Chat'
-import GroupsIcon from '@mui/icons-material/Groups'
 import SearchIcon from '@mui/icons-material/Search'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import FilterListIcon from '@mui/icons-material/FilterList'
-import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked'
+
+import chat from '../assets/chat.svg'
+import status from '../assets/status.svg'
+import groups from '../assets/groups.svg'
 
 const ChatListingWrapper = styled.div`
   display: flex;
@@ -185,34 +186,42 @@ function ChatListing() {
             onClick={toggleDrawer('Profile', 'left', true)}
           />
           <NavActions>
-            <GroupsIcon
+            <img
               onClick={toggleDrawer('Communities', 'left', true)}
-              sx={{
+              style={{
                 color: '#adbac1',
                 width: '23px',
                 height: '23px',
                 cursor: 'pointer',
-                marginRight: 3,
+                marginRight: '25px',
               }}
+              src={groups}
+              alt={groups}
             />
-            <RadioButtonUncheckedIcon
-              sx={{
+
+            <img
+              style={{
                 color: '#adbac1',
                 width: '23px',
                 height: '23px',
                 cursor: 'pointer',
-                marginRight: 3,
+                marginRight: '25px',
               }}
+              src={status}
+              alt={status}
             />
-            <ChatIcon
+
+            <img
               onClick={toggleDrawer('Chat', 'left', true)}
-              sx={{
+              style={{
                 color: '#adbac1',
                 width: '23px',
                 height: '23px',
                 cursor: 'pointer',
-                marginRight: 3,
+                marginRight: '25px',
               }}
+              src={chat}
+              alt={chat}
             />
             <MoreVertIcon
               sx={{

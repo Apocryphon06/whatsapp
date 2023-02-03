@@ -107,6 +107,8 @@ const SubText = styled.div`
   font-size: 14px;
 `;
 
+
+
 function ChatView({ isActive, name, activity, url }) {
   const [send, setSend] = useState(false);
 
@@ -120,7 +122,7 @@ function ChatView({ isActive, name, activity, url }) {
         <ChatViewWrapper>
           <Nav>
             <User>
-              <UserIcon src={url} alt="user" />
+              <UserIcon style={{cursor:'pointer'}} src={url} alt="user"/>
               <InfoWrapper>
                 <Name>{name}</Name>
                 <LastSeen>Last seen {activity}</LastSeen>
